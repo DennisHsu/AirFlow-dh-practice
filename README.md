@@ -80,11 +80,12 @@ data_directory='/storage/db/main'
 service postgresql start
 ```
 
-建立一個Python3 + PostgreSQL 環境的image (option)
 
-`docker commit -m "init py postgresql image" -a "dh" [container id] py_postgresql_env:v1.0`
+以上都還在環境設定
 
-真的要安裝了
+接下來真的要安裝了 XD
+
+[ssh, postgres, mongo, sftp, ftp, http] 代表我要安裝的Operator 清單
 
 ```bash
 pip install 'apache-airflow[ssh, postgres, mongo, sftp, ftp, http]'
@@ -149,9 +150,9 @@ airflow db init
 airflow webserver -p 8001 # default 8080
 ```
 
-![Untitled](%E7%92%B0%E5%A2%83%E6%9E%B6%E8%A8%AD%2043e79/Untitled.png)
+http://127.0.0.1:8001
 
-看到以上畫面，代表運行成功
+看到AirFlow畫面，代表運行成功
 
 使用PostgreSQL
 
@@ -194,8 +195,8 @@ dags_folder = /storage/airflow/dags
 ```bash
 airflow db init
 
-airflow users create --email dennis0606@gmail.com --firstname D --lastname H --role Admin --username admin
-# 輸入兩次密碼 10007718
+airflow users create --email youremail@mail.com --firstname D --lastname H --role Admin --username admin
+# 輸入兩次密碼
 
 airflow webserver -p 8001 # default 8080
 ```
